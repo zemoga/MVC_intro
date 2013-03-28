@@ -4,6 +4,7 @@ window.Router = (function(AppContext) {
 		routes = {
 			list: 'ListController',
 			add: 'AddController',
+			empty: 'EmptyController'
 		};
 
 	function startRouting() {
