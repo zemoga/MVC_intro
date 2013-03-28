@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <title>A simple MVC structure</title>
+	    <link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+	    <div id="container">
+	        <h1>My users</h1>
+	        <nav>
+	        	<a href="#list">List</a> - <a href="#add">Add</a>
+	        </nav>
+	        <div id="app"></div>
+	    </div>
+		<!-- script data-main="js/main" src="js/require.js"></script -->
+	</body>
+	<!-- MVC elements -->
+	<script src="js/models/user.js"></script>
+	<script src="js/views/list.view.js"></script>
+	<script src="js/controllers/list.controller.js"></script>
+	<script src="js/views/add.view.js"></script>
+	<script src="js/controllers/add.controller.js"></script>
+	<!-- app starter -->
+	<script src="js/router.js"></script>
+	<script src="js/main.js"></script>
+</html>
