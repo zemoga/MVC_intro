@@ -1,5 +1,6 @@
 window.EmptyController = (function(EmptyView) {
 	function start() {
+		console.log('EmptyController.start');
 		EmptyView.render(clearUserList);
 	}
 
@@ -7,8 +8,6 @@ window.EmptyController = (function(EmptyView) {
 		if (localStorage.users) {
 			localStorage.removeItem('users');
 		}
-
-		window.location.hash = '#list';
 	}
 
 	return {

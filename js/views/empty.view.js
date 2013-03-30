@@ -6,7 +6,9 @@ window.EmptyView = (function() {
 			wipeOutUsersAction();
 		}
 
-		window.location.hash = '#list';
+		setTimeout(function(){
+			window.location.hash = '#list';
+		},0);
 	}
 
 	return {

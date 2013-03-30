@@ -1,5 +1,6 @@
 window.AddController = (function(AddView) {
 	function start() {
+		console.log('AddController.start');
 		AddView.render(addUser);
 	}
 
