@@ -3,7 +3,7 @@ window.Router = (function(AppContext) {
 		currentHash = '',
 		routes = {
 			list: 'ListController',
-			add: 'AddController',
+			add: 'AddController'
 		};
 
 	function startRouting() {
