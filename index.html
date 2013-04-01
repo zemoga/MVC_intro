@@ -6,6 +6,7 @@
 	    <link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+		<div id="banner">No messages so far</div>
 	    <div id="container">
 	        <h1>My users</h1>
 	        <nav>
@@ -15,13 +16,17 @@
 	    </div>
 		<!-- script data-main="js/main" src="js/require.js"></script -->
 	</body>
+	<!-- MVC helpers -->
+	<script src="js/router.js"></script>
+	<script src="js/mediator.js"></script>
 	<!-- MVC elements -->
 	<script src="js/models/user.js"></script>
+	<script src="js/views/banner.view.js"></script>
+	<script src="js/controllers/banner.controller.js"></script>	
 	<script src="js/views/list.view.js"></script>
 	<script src="js/controllers/list.controller.js"></script>
 	<script src="js/views/add.view.js"></script>
 	<script src="js/controllers/add.controller.js"></script>
 	<!-- app starter -->
-	<script src="js/router.js"></script>
 	<script src="js/main.js"></script>
 </html>

@@ -2,6 +2,7 @@ window.AddController = (function(AddView) {
 	function start() {
 		console.log('AddController.start');
 		AddView.render(addUser);
+		window.Mediator.subscribe('add user',addUser);
 	}
 
 	function addUser(userName) {

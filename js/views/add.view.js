@@ -7,9 +7,11 @@ window.AddView = (function() {
 	}
 
 	function bindEvents(addUserAction) {
-		document.getElementById('add').addEventListener('click', function(){
-			addUserAction(document.getElementById('user-name').value);
-		}, false);
+		document.getElementById('add').addEventListener('click',addUser, false);
+	}
+
+	function addUser(){
+		window.Mediator.publish('add user',[document.getElementById('user-name').value]);
 	}
 
 	return {
