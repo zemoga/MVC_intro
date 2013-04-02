@@ -4,5 +4,6 @@ window.MVC = {
 	features: [
 		'List users functionality implemented',
 		'Add users functionality implemented',
+		'Router implemented',
 		'Empty user list functionality implemented']
 };
