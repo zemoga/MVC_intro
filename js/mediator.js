@@ -21,7 +21,7 @@
 
 			for (i = 0; i < len; i++) {
 				console.log('calling:', message);
-				messages[message][i].apply(this, (params || []));
+				messages[message][i].apply(App, (params || []));
 			}
 		}
 
