@@ -1,14 +1,19 @@
-window.ListController = (function(ListView) {
-	function start() {
-		console.log('ListController.start');
-		var users = JSON.parse(localStorage.users || '[]');
+(function(App) {
 
-		ListView.render({
-			users: users
-		});
-	}
+	'use strict';
 
-	return {
-		start: start
-	};
-}(window.ListView));
+	App.ListController = (function() {
+		function start() {
+			console.log('ListController.start');
+			var users = JSON.parse(window.localStorage.users || '[]');
+
+			App.ListView.render({
+				users: users
+			});
+		}
+
+		return {
+			start: start
+		};
+	}());
+}(window.MVC));

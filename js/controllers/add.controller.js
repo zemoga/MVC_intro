@@ -1,19 +1,25 @@
-window.AddController = (function(AddView) {
-	function start() {
-		console.log('AddController.start');
-		AddView.render(addUser);
-	}
+(function(App) {
 
-	function addUser(userName) {
-		console.log('AddController.addUser');
-		var users = JSON.parse(localStorage.users || '[]');
+	'use strict';
 
-		users.push(new User(userName));
-		localStorage.users = JSON.stringify(users);
-		window.location.hash = '#list';
-	}
+	App.AddController = (function() {
+		function start() {
+			console.log('AddController.start');
+			App.AddView.render(addUser);
+		}
 
-	return {
-		start: start
-	};
-}(window.AddView));
+		function addUser(userName) {
+			console.log('AddController.addUser');
+			var users = JSON.parse(localStorage.users || '[]');
+
+			users.push(new User(userName));
+			window.localStorage.users = JSON.stringify(users);
+			window.location.hash = '#list';
+		}
+
+		return {
+			start: start,
+			addUser: addUser
+		};
+	}());
+}(window.MVC));
