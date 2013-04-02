@@ -1,7 +1,8 @@
 window.MVC = {
-	version: '1.0',
+	version: '1.0e',
 	desc: 'Basic namespaced MVC app',
 	features: [
 		'List users functionality implemented',
-		'Add users']
+		'Add users functionality implemented',
+		'Empty user list functionality implemented']
 };
