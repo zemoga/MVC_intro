@@ -1,13 +1,18 @@
-window.BannerController = (function(BannerView) {
-	function start() {
-		console.log('BannerController.start');
-		BannerView.render({
-			msg:'Try adding user...',
-			delay:2000
-		});
-	}
+(function(App) {
 
-	return {
-		start: start
-	};
-}(window.BannerView));
+	'use strict';
+
+	App.BannerController = (function() {
+		function start() {
+			console.log('BannerController.start');
+			App.BannerView.render({
+				msg: 'Try adding user...',
+				delay: 2000
+			});
+		}
+
+		return {
+			start: start
+		};
+	}());
+}(window.MVC));

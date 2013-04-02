@@ -1,25 +1,30 @@
-window.BannerView = (function() {
-	var element;
+(function(App) {
 
-	function render(parameters) {
-		element = document.getElementById('banner');
+	'use strict';
 
-		displayMessage(parameters.msg, parameters.delay);
-		window.Mediator.subscribe('add user', newUser);
-	}
+	App.BannerView = (function() {
+		var element;
 
-	function displayMessage(msg, delay) {
-		element.innerHTML = '<div class="content">' + msg + '</div>';
-		setTimeout(function() {
-			element.innerHTML = '';
-		}, delay);
-	}
+		function render(parameters) {
+			element = document.getElementById('banner');
 
-	function newUser(userName){
-		displayMessage('A new user called "' + userName + '" has been added!',3000);
-	}
+			displayMessage(parameters.msg, parameters.delay);
+			MVC.Mediator.subscribe('add user', newUser);
+		}
 
-	return {
-		render: render
-	};
-}());
+		function displayMessage(msg, delay) {
+			element.innerHTML = '<div class="content">' + msg + '</div>';
+			setTimeout(function() {
+				element.innerHTML = '';
+			}, delay);
+		}
+
+		function newUser(userName) {
+			displayMessage('A new user called "' + userName + '" has been added!', 3000);
+		}
+
+		return {
+			render: render
+		};
+	}());
+}(window.MVC));

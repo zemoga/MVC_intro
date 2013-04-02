@@ -1,35 +1,40 @@
-window.Router = (function(AppContext) {
-	var defaultRoute = '#list',
-		currentHash = '',
-		routes = {
-			list: 'ListController',
-			add: 'AddController'
-		};
+(function(App) {
 
-	function startRouting() {
-		window.location.hash = window.location.hash || defaultRoute;
-		window.addEventListener('hashchange', onHashChange, false);
-		//update on load
-		onHashChange();
-	}
+	'use strict';
 
-	function onHashChange() {
-		var route = window.location.hash.replace('#', '');
+	App.Router = (function() {
+		var defaultRoute = '#list',
+			currentHash = '',
+			routes = {
+				list: 'ListController',
+				add: 'AddController'
+			};
 
-		if (window.location.hash != currentHash) {
-			if (routes[route]) {
-				loadController(routes[route]);
-			}
-
-			currentHash = window.location.hash;
+		function startRouting() {
+			window.location.hash = window.location.hash || defaultRoute;
+			window.addEventListener('hashchange', onHashChange, false);
+			//update on load
+			onHashChange();
 		}
-	}
 
-	function loadController(controller) {
-		AppContext[controller].start();
-	}
+		function onHashChange() {
+			var route = window.location.hash.replace('#', '');
 
-	return {
-		startRouting: startRouting
-	};
-}(window));
+			if (window.location.hash != currentHash) {
+				if (routes[route]) {
+					loadController(routes[route]);
+				}
+
+				currentHash = window.location.hash;
+			}
+		}
+
+		function loadController(controller) {
+			App[controller].start();
+		}
+
+		return {
+			startRouting: startRouting
+		};
+	}());
+}(window.MVC));

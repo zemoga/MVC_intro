@@ -1,4 +1,6 @@
-(function(AppContext) {
-	AppContext.BannerController.start();
-	AppContext.Router.startRouting();
-}(window));
+(function(App) {
+	'use strict';
+
+	App.BannerController.start();
+	App.Router.startRouting();
+}(window.MVC));

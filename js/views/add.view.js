@@ -1,20 +1,25 @@
-window.AddView = (function() {
-	function render(action) {
-		var appDiv = document.getElementById('app');
+(function(App) {
 
-		appDiv.innerHTML = '<input id="user-name" /><button id="add">Add this user</button>';
-		bindEvents(action);
-	}
+	'use strict';
 
-	function bindEvents(addUserAction) {
+	App.AddView = (function() {
+		function render() {
+			var appDiv = document.getElementById('app');
+
+			appDiv.innerHTML = '<input id="user-name" /><button id="add">Add this user</button>';
+			bindEvents();
+		}
+
+	function bindEvents() {
 		document.getElementById('add').addEventListener('click',addUser, false);
 	}
 
 	function addUser(){
-		window.Mediator.publish('add user',[document.getElementById('user-name').value]);
+		App.Mediator.publish('add user',[document.getElementById('user-name').value]);
 	}
 
-	return {
-		render: render
-	};
-}());
+		return {
+			render: render
+		};
+	}());
+}(window.MVC));
