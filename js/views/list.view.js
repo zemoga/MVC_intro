@@ -3,9 +3,8 @@
 	'use strict';
 
 	App.ListView = (function() {
-		function render(parameters) {
+		function render(users) {
 			var appDiv = document.getElementById('app'),
-				users = parameters.users,
 				len = users.length,
 				html = '<ul>',
 				i = 0;
@@ -21,6 +20,9 @@
 			html += '</ul>';
 			appDiv.innerHTML = html;
 		}
+
+		//construction
+		App.Mediator.subscribe('render list', render);
 
 		return {
 			render: render

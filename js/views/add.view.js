@@ -10,13 +10,16 @@
 			bindEvents();
 		}
 
-	function bindEvents() {
-		document.getElementById('add').addEventListener('click',addUser, false);
-	}
+		function bindEvents() {
+			document.getElementById('add').addEventListener('click', addUser, false);
+		}
 
-	function addUser(){
-		App.Mediator.publish('add user',[document.getElementById('user-name').value]);
-	}
+		function addUser() {
+			App.Mediator.publish('add user', [document.getElementById('user-name').value]);
+		}
+
+		//construction
+		App.Mediator.subscribe('render add', render);
 
 		return {
 			render: render

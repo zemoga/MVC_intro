@@ -20,7 +20,8 @@
 				i;
 
 			for (i = 0; i < len; i++) {
-				messages[message][i].apply(this, params);
+				console.log('calling:', message);
+				messages[message][i].apply(this, (params || []));
 			}
 		}
 

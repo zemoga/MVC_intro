@@ -7,9 +7,7 @@
 			console.log('ListController.start');
 			var users = JSON.parse(window.localStorage.users || '[]');
 
-			App.ListView.render({
-				users: users
-			});
+			App.Mediator.publish('render list',[users]);
 		}
 
 		return {
