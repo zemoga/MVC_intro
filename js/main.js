@@ -1,3 +1,5 @@
-(function(AppContext) {
-	AppContext.Router.startRouting();
-}(window));
+(function(App) {
+	'use strict';
+
+	App.Router.startRouting();
+}(window.MVC));

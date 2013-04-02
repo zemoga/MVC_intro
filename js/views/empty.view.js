@@ -1,17 +1,22 @@
-window.EmptyView = (function() {
-	function render(wipeOutUsersAction) {
-		var wipe = confirm('Are you sure? (Undo is still under construction!)');
+(function(App) {
 
-		if (wipe) {
-			wipeOutUsersAction();
+	'use strict';
+
+	App.EmptyView = (function() {
+		function render() {
+			var wipe = confirm('Are you sure? (Undo is still under construction!)');
+
+			if (wipe) {
+				App.EmptyController.clearUserList();
+			}
+
+			setTimeout(function() {
+				window.location.hash = '#list';
+			}, 0);
 		}
 
-		setTimeout(function(){
-			window.location.hash = '#list';
-		},0);
-	}
-
-	return {
-		render: render
-	};
-}());
+		return {
+			render: render
+		};
+	}());
+}(window.MVC));

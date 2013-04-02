@@ -1,16 +1,22 @@
-window.EmptyController = (function(EmptyView) {
-	function start() {
-		console.log('EmptyController.start');
-		EmptyView.render(clearUserList);
-	}
+(function(App) {
 
-	function clearUserList() {
-		if (localStorage.users) {
-			localStorage.removeItem('users');
+	'use strict';
+
+	App.EmptyController = (function() {
+		function start() {
+			console.log('EmptyController.start');
+			MVC.EmptyView.render();
 		}
-	}
 
-	return {
-		start: start
-	};
-}(window.EmptyView));
+		function clearUserList() {
+			if (localStorage.users) {
+				localStorage.removeItem('users');
+			}
+		}
+
+		return {
+			start: start,
+			clearUserList: clearUserList
+		};
+	}());
+}(window.MVC));

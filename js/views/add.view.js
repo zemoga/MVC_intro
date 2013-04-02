@@ -1,18 +1,23 @@
-window.AddView = (function() {
-	function render(action) {
-		var appDiv = document.getElementById('app');
+(function(App) {
 
-		appDiv.innerHTML = '<input id="user-name" /><button id="add">Add this user</button>';
-		bindEvents(action);
-	}
+	'use strict';
 
-	function bindEvents(addUserAction) {
-		document.getElementById('add').addEventListener('click', function(){
-			addUserAction(document.getElementById('user-name').value);
-		}, false);
-	}
+	App.AddView = (function() {
+		function render() {
+			var appDiv = document.getElementById('app');
 
-	return {
-		render: render
-	};
-}());
+			appDiv.innerHTML = '<input id="user-name" /><button id="add">Add this user</button>';
+			bindEvents();
+		}
+
+		function bindEvents() {
+			document.getElementById('add').addEventListener('click', function() {
+				App.AddController.addUser(document.getElementById('user-name').value);
+			}, false);
+		}
+
+		return {
+			render: render
+		};
+	}());
+}(window.MVC));
