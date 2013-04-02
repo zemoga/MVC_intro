@@ -3,5 +3,6 @@ window.MVC = {
 	desc: 'Basic namespaced MVC app',
 	features: [
 		'List users functionality implemented',
-		'Add users functionality implemented']
+		'Add users functionality implemented',
+		'Router implemented']
 };
