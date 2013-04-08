@@ -12,10 +12,20 @@
 
 		function bindEvents() {
 			document.getElementById('add').addEventListener('click', addUser, false);
+			document.getElementById('user-name').addEventListener('keydown', onEnterPressed, false);
+		}
+
+		function onEnterPressed(event) {
+			if (event.keyCode === 13) {
+				addUser();
+			}
 		}
 
 		function addUser() {
-			App.Mediator.publish('add user', [document.getElementById('user-name').value]);
+			var usernameField = document.getElementById('user-name');
+
+			App.Mediator.publish('add user', [usernameField.value]);
+			usernameField.value = '';
 		}
 
 		//construction
