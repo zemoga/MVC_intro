@@ -1,4 +1,6 @@
-MVC_intro
+MVC intro
 =========
 
-Repository for the whole mvc tutorial - part of the lessons about usage of brunch stack
+Repository for the implementation of a basic MVC vanilla-js implementation. 
+
+Part of a series of lessons to the UI team.
